@@ -160,7 +160,7 @@ namespace CardManager
         public void UpdateCardsCounter(bool state, object sender)
         {
             var resultString_cards = Regex.Match(mw.countOfCards.Content.ToString(), @"\d+").Value;
-            var resultString_current_cards = Regex.Match((sender as CheckBox).Content.ToString().Split('-')[1], @"\d+").Value;
+            var resultString_current_cards = Regex.Match((sender as CheckBox).Content.ToString().Split('-')[(sender as CheckBox).Content.ToString().Split('-').Length - 1], @"\d+").Value;
             int temp_cards;
             if (state)
             {
